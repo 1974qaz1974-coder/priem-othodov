@@ -1,301 +1,198 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Прием веток, древесных отходов и строительного боя в Березовском. Быстрая разгрузка от 10 минут. Организация вывоза."><meta name="theme-color" content="#101410">
+<title>Прием веток и строительного боя — Березовское</title>
+<style>
+:root{--shadow:0 16px 45px rgba(16,20,16,.10)}
+:root {
+  --green:#69c51c; --dark:#101410; --yellow:#ffd21a; --light:#f5f7f2;
+  --muted:#687064; --white:#fff; --radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Arial,sans-serif;color:#151815;background:var(--light);line-height:1.5}
+a{color:inherit;text-decoration:none}
+.container{width:min(1180px,92%);margin:auto}
+.hero{background:linear-gradient(135deg,#0c100c 0%,#172016 52%,#283d20 100%);color:#fff;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center;padding:42px 0 50px}
+.badge{display:inline-flex;gap:9px;align-items:center;background:var(--yellow);color:#111;padding:10px 15px;border-radius:999px;font-weight:900;margin-bottom:18px}
+h1{font-size:clamp(40px,6vw,76px);line-height:.95;margin:0 0 18px;text-transform:uppercase;letter-spacing:-2px}
+h1 span{color:var(--green)}
+.hero p{font-size:clamp(18px,2.2vw,24px);max-width:650px;color:#e9eee7}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:26px 0}
+.step{background:#1c241b;border:1px solid #3b4b38;border-radius:18px;padding:16px;text-align:center}
+.step b{display:block;font-size:22px;color:var(--green);text-transform:uppercase}
+.step strong{font-size:14px;color:#fff}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:15px 22px;border-radius:14px;font-weight:900;font-size:17px;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--green);color:#10200b}
+.btn-yellow{background:var(--yellow);color:#111}
+.btn-dark{background:#1d271b;color:#fff;border:1px solid #4c6048}
+.hero-img{width:100%;border-radius:var(--radius);display:block;box-shadow:0 22px 55px #0008;border:1px solid #ffffff22}
+.section{padding:72px 0}
+.section h2{font-size:clamp(30px,4vw,48px);margin:0 0 14px;text-align:center}
+.lead{max-width:750px;margin:0 auto 36px;text-align:center;color:var(--muted);font-size:18px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border-radius:var(--radius);padding:25px;box-shadow:0 8px 30px #14210d0c;border:1px solid #e1e8dc}
+.icon{font-size:34px}
+.card h3{margin:8px 0;font-size:22px}
+.card p{color:var(--muted);margin:0}
+.accept{background:#eaf5e2}
+.accept-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.list{background:#fff;border-radius:var(--radius);padding:26px;border:1px solid #dce8d4}
+.list h3{margin-top:0;font-size:24px}
+.list li{margin:9px 0}
+.note{margin-top:20px;padding:16px 18px;border-radius:15px;background:#fff4c6;border-left:5px solid var(--yellow)}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.gallery img{width:100%;border-radius:var(--radius);display:block;box-shadow:0 10px 35px #0001}
+.contact{background:var(--dark);color:#fff}
+.contact-box{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}
+.phone{font-size:clamp(32px,5vw,58px);font-weight:950;color:var(--green);display:block;margin:12px 0}
+.footer{padding:25px 0;background:#080b08;color:#aab3a6;text-align:center;font-size:14px}
+@media(max-width:800px){
+ .hero-grid,.contact-box,.accept-grid{grid-template-columns:1fr}
+ .cards{grid-template-columns:1fr}
+ .gallery{grid-template-columns:1fr}
+ .hero-grid{padding-top:28px}
+ .steps{grid-template-columns:1fr}
+ h1{letter-spacing:-1px}
+}
 
-  <title>Приём отходов</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f7f5;
-      color: #17221b;
-      line-height: 1.5;
-    }
-
-    header {
-      background: #0d6b3d;
-      color: white;
-      padding: 18px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .header-inner {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 15px;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #0d6b3d, #159447);
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      max-width: 650px;
-      margin: 0 auto 30px;
-      font-size: 19px;
-      opacity: 0.95;
-    }
-
-    .button {
-      display: inline-block;
-      background: white;
-      color: #0d6b3d;
-      padding: 15px 28px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 5px;
-      transition: 0.2s;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
-    .button-green {
-      background: #0d6b3d;
-      color: white;
-    }
-
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
-    }
-
-    .title {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 40px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 30px 25px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-      text-align: center;
-    }
-
-    .icon {
-      font-size: 45px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 21px;
-    }
-
-    .about {
-      background: white;
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-    }
-
-    .contact {
-      background: #e5f3eb;
-      text-align: center;
-      border-radius: 20px;
-      padding: 50px 20px;
-    }
-
-    .contact h2 {
-      font-size: 32px;
-      margin-bottom: 15px;
-    }
-
-    .contact p {
-      margin-bottom: 25px;
-    }
-
-    footer {
-      background: #122019;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-      margin-top: 20px;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 32px;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
-
-      nav {
-        display: none;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 45px 15px;
-      }
-
-      .about {
-        padding: 25px;
-      }
-    }
-  </style>
+.hero{position:relative}
+.hero:after{content:"";position:absolute;inset:auto -10% -160px auto;width:420px;height:420px;border-radius:50%;background:rgba(105,197,28,.12);filter:blur(10px);pointer-events:none}
+.hero-grid{position:relative;z-index:1}
+.hero-img{aspect-ratio:16/10;object-fit:cover}
+.card,.list{box-shadow:var(--shadow)}
+.card{transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(16,20,16,.14)}
+.btn{min-height:52px}
+.section:nth-of-type(2){padding-top:58px}
+.quick-bar{display:none}
+.small-note{font-size:14px;color:#aab3a6;margin-top:12px}
+@media(max-width:800px){
+  body{padding-bottom:78px}
+  .hero-grid{gap:22px;padding-bottom:34px}
+  .hero-img{aspect-ratio:4/3}
+  .hero p{font-size:18px}
+  .btn{width:100%}
+  .cta-row{width:100%}
+  .step{padding:14px}
+  .section{padding:54px 0}
+  .quick-bar{position:fixed;display:grid;grid-template-columns:1fr 1fr;gap:8px;left:10px;right:10px;bottom:10px;padding:8px;background:rgba(16,20,16,.96);border:1px solid #ffffff20;border-radius:18px;z-index:999;box-shadow:0 12px 35px rgba(0,0,0,.28)}
+  .quick-bar a{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:13px;font-weight:900}
+  .quick-call{background:var(--green);color:#10200b}
+  .quick-max{background:var(--yellow);color:#111}
+}
+</style>
 </head>
-
 <body>
 
-<header>
-  <div class="header-inner">
-    <div class="logo">♻️ Приём отходов</div>
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">⚡ РАЗГРУЗКА ОТ 10 МИНУТ</div>
+      <h1>ПРИЕМ <span>ВЕТОК</span><br>И СТРОИТЕЛЬНОГО БОЯ</h1>
+      <p><b>Березовское поселение.</b> Привез → разгрузил → уехал. Быстро, удобно, без лишнего ожидания.</p>
 
-    <nav>
-      <a href="#services">Услуги</a>
-      <a href="#about">О нас</a>
-      <a href="#contact">Контакты</a>
-    </nav>
+      <div class="steps">
+        <div class="step"><b>1. Привез</b><strong>удобный заезд</strong></div>
+        <div class="step"><b>2. Разгрузил</b><strong>от 10 минут</strong></div>
+        <div class="step"><b>3. Уехал</b><strong>без простоя</strong></div>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:89123013739">📞 Позвонить сейчас</a>
+        <a class="btn btn-yellow" href="https://max.ru/join/VgcYNOmdtTx3Lb54CG55Sfbj_hWXXcqz3nF9vOkc9zI" target="_blank" rel="noopener">💬 Написать в МАХ</a>
+      </div>
+    </div>
+    <div>
+      <img class="hero-img" src="banner.jpg" alt="Прием веток и строительного боя в Березовском">
+    </div>
   </div>
 </header>
 
-<section class="hero">
-  <h1>Приём и переработка отходов</h1>
-
-  <p>
-    Ответственный подход к утилизации и переработке.
-    Принимаем различные виды отходов и помогаем сохранить окружающую среду.
-  </p>
-
-  <a class="button" href="#contact">
-    Связаться с нами
-  </a>
-</section>
-
-<section id="services">
-
-  <h2 class="title">Наши услуги</h2>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="icon">♻️</div>
-      <h3>Приём отходов</h3>
-      <p>
-        Принимаем различные виды вторичного сырья и отходов.
-      </p>
+<section class="section">
+  <div class="container">
+    <h2>Почему удобно привезти к нам?</h2>
+    <p class="lead">Главное — не терять время на простой техники. Заехали, разгрузились и продолжили работу.</p><div class="note" style="max-width:780px;margin:0 auto 30px;text-align:center;border-left:0;border-bottom:4px solid var(--yellow)">🚛 <b>Для грузовой техники:</b> уточните условия и стоимость перед выездом.</div>
+    <div class="cards">
+      <article class="card"><div class="icon">⏱️</div><h3>Быстрая разгрузка</h3><p>Ориентир — от 10 минут. Без долгого ожидания.</p></article>
+      <article class="card"><div class="icon">🚛</div><h3>Удобный заезд</h3><p>Широкие и твердые подъездные пути для грузовой техники.</p></article>
+      <article class="card"><div class="icon">📄</div><h3>Документы</h3><p>Выдаем необходимые акты приема для отчетности.</p></article>
+      <article class="card"><div class="icon">💳</div><h3>Оплата</h3><p>Наличный и безналичный расчет, без НДС.</p></article>
+      <article class="card"><div class="icon">🚚</div><h3>Нет машины?</h3><p>Поможем организовать вывоз и доставку до площадки.</p></article>
+      <article class="card"><div class="icon">📍</div><h3>Березовское</h3><p>Точный адрес и схему проезда отправим после обращения.</p></article>
     </div>
+  </div>
+</section>
 
-    <div class="card">
-      <div class="icon">🚛</div>
-      <h3>Вывоз</h3>
-      <p>
-        Организуем удобный вывоз отходов по предварительной договорённости.
-      </p>
+<section class="section accept">
+  <div class="container">
+    <h2>Что принимаем</h2>
+    <p class="lead">Работаем с чистыми отходами 5 класса. Посторонние примеси не принимаем.</p>
+    <div class="accept-grid">
+      <div class="list">
+        <h3>🌲 Ветки и древесные отходы</h3>
+        <ul>
+          <li>Ветки и сучья</li><li>Порубочные остатки</li><li>Обрезки деревьев</li>
+          <li>Стволы</li><li>Опилки</li>
+        </ul>
+      </div>
+      <div class="list">
+        <h3>🧱 Строительный бой</h3>
+        <ul>
+          <li>Бой кирпича</li><li>Бетон</li><li>Щебень</li><li>Керамика</li>
+        </ul>
+      </div>
     </div>
+    <div class="note">⚠️ <b>Важно:</b> принимаем только чистые отходы 5 класса. Без ТКО, пластика и других посторонних примесей.</div>
+  </div>
+</section>
 
-    <div class="card">
-      <div class="icon">🌱</div>
-      <h3>Переработка</h3>
-      <p>
-        Сортировка и направление подходящих материалов на переработку.
-      </p>
+<section class="section">
+  <div class="container">
+    <h2>Привез → разгрузил → уехал</h2>
+    <p class="lead">Никаких сложных действий. Свяжитесь с нами, уточните стоимость и получите схему проезда.</p>
+    <div class="gallery">
+      <img src="banner.jpg" alt="Прием веток и строительного боя в Березовском">
+      <img src="banner-2.jpg" loading="lazy" alt="Разгрузка веток и строительного боя">
+      <img src="banner-3.jpg" loading="lazy" alt="Прием веток и строительного боя — баннер">
+      <img src="banner-4.jpg" loading="lazy" alt="Разгрузка строительного боя — баннер">
+      <img src="banner-5.jpg" loading="lazy" alt="Прием веток — рекламный баннер">
+      <img src="banner-6.jpg" loading="lazy" alt="Прием веток и строительного боя — рекламный баннер">
+      <img src="banner-7.jpg" loading="lazy" alt="Привез разгрузил уехал — рекламный баннер">
     </div>
-
   </div>
-
 </section>
 
-<section id="about">
-
-  <div class="about">
-
-    <h2>О нашей компании</h2>
-
-    <br>
-
-    <p>
-      Мы стремимся сделать обращение с отходами удобным,
-      ответственным и экологичным.
-    </p>
-
-    <br>
-
-    <p>
-      Наша задача — помочь предприятиям и частным клиентам
-      правильно организовать сдачу и утилизацию отходов.
-    </p>
-
+<section class="section contact">
+  <div class="container contact-box">
+    <div>
+      <div class="badge">📲 БЫСТРО ОТВЕТИМ</div>
+      <h2 style="text-align:left">Нужно узнать стоимость?</h2>
+      <p>Напишите, что хотите привезти и примерный объем. Подскажем стоимость, условия приема и отправим точный адрес.</p>
+    </div>
+    <div>
+      <a class="phone" href="tel:89123013739">8 912 301-37-39</a>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:89123013739">📞 Позвонить сейчас</a>
+        <a class="btn btn-yellow" href="https://max.ru/join/VgcYNOmdtTx3Lb54CG55Sfbj_hWXXcqz3nF9vOkc9zI" target="_blank" rel="noopener">💬 Написать в МАХ</a>
+      </div>
+    </div>
   </div>
-
 </section>
 
-<section id="contact">
+<div class="quick-bar" aria-label="Быстрые контакты">
+  <a class="quick-call" href="tel:89123013739">📞 Позвонить</a>
+  <a class="quick-max" href="https://max.ru/join/VgcYNOmdtTx3Lb54CG55Sfbj_hWXXcqz3nF9vOkc9zI" target="_blank" rel="noopener">💬 МАХ</a>
+</div>
 
-  <div class="contact">
-
-    <h2>Свяжитесь с нами</h2>
-
-    <p>
-      Оставьте заявку, чтобы узнать условия приёма и получить консультацию.
-    </p>
-
-    <!-- ЗАМЕНИ НОМЕР НА СВОЙ -->
-    <a class="button button-green" href="tel:+70000000000">
-      📞 Позвонить
-    </a>
-
-    <!-- ЗАМЕНИ USERNAME НА СВОЙ TELEGRAM -->
-    <a class="button button-green" href="https://t.me/username">
-      💬 Telegram
-    </a>
-
-  </div>
-
-</section>
-
-<footer>
-  <p>© 2026 Приём отходов. Все права защищены.</p>
+<footer class="footer">
+  <div class="container">Прием веток и строительного боя • Березовское поселение</div>
 </footer>
-
 </body>
 </html>
